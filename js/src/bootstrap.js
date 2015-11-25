@@ -1,9 +1,13 @@
+/* global NexT: true */
+
 $(document).ready(function () {
+
+  $(document).trigger('bootstrap:before');
 
   isMobile() && FastClick.attach(document.body);
 
   $("#posts").find('img').lazyload({
-    placeholder: "{{ url_for(theme.images) }}/loading.gif",
+    placeholder: "/images/loading.gif",
     effect: "fadeIn"
   });
 
@@ -23,6 +27,12 @@ $(document).ready(function () {
     });
   });
 
+
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  NexT.utils.embeddedVideoTransformer();
+  NexT.utils.addActiveClassToMenuItem();
+
+
   // Define Motion Sequence.
   motionIntegrator
     .add(motionMiddleWares.logo)
@@ -30,6 +40,10 @@ $(document).ready(function () {
     .add(motionMiddleWares.postList)
     .add(motionMiddleWares.sidebar);
 
+  $(document).trigger('motion:before');
+
   // Bootstrap Motion.
   CONFIG.motion && motionIntegrator.bootstrap();
+
+  $(document).trigger('bootstrap:after');
 });
