@@ -92,7 +92,7 @@ html {
 <meta property="og:image" content="http://images.cnitblog.com/blog/374539/201501/261752558947877.png">
 <meta property="og:image" content="http://images.cnitblog.com/blog/374539/201501/270936547379029.png">
 <meta property="og:image" content="http://images.cnitblog.com/blog/374539/201501/281717520973529.gif">
-<meta property="og:updated_time" content="2015-11-20T01:33:34.000Z">
+<meta property="og:updated_time" content="2015-11-26T01:33:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sptoo">
 <meta name="twitter:description" content="&amp;lt;!doctype html&amp;gt;
@@ -983,6 +983,9 @@ pre code:before,pre code:after,pre tt:before,pre tt:after {
 
 <p>越上层，封装程度越高，动画实现越简洁越简单，但是自由度越低；反之亦然。本文着重介绍Core Animation层的基本动画实现方案。</p>
 
+<a id="more"></a>
+
+
 <p>在iOS中，展示动画可以类比于显示生活中的“拍电影”。拍电影有三大要素：演员+剧本+开拍，概念类比如下：</p>
 
 <blockquote><p>演员--->CALayer，规定电影的主角是谁<br>
@@ -1120,6 +1123,23 @@ groupAnnimation.repeatCount = MAXFLOAT;
 </code></pre>
 
 <p> <img src="http://images.cnitblog.com/blog/374539/201501/281717520973529.gif" alt="git"></p>
+
+<p> 这种方式也是可以的。其实你的目的就是想对一个已经存在view进行CAAnimation控制，至于这个View是不是storyboard创建并不影响。在文章里layer都是新创建的，比如：</p>
+
+<pre><code> //演员初始化
+ CALayer *scaleLayer = [[CALayer alloc]      init];
+ scaleLayer.backgroundColor = [UIColor blueColor].CGColor;      
+ scaleLayer.frame = CGRectMake(60, 100, 50, 50);
+ scaleLayer.cornerRadius = 10;
+ [self.view.layer addSublayer:scaleLayer];
+</code></pre>
+
+<p>如果你想控制已经创建出来的view，那就直接取出该View的layer，用下面的代码代替上面的创建过程：</p>
+
+<pre><code> CALayer *scaleLayer = myExistingView.layer;
+</code></pre>
+
+<p>然后接下去就按照原来的方法处理</p>
 </body>
 </html>
     
