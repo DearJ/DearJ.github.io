@@ -211,15 +211,111 @@
 
     
     
+
+    
       
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/02/iOS9网络Tip/" itemprop="url">
+                  iOS9网络Tip
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-02T14:25:09+08:00" content="2016-03-02">
+              2016-03-02
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/03/02/iOS9网络Tip/" class="leancloud_visitors" data-flag-title="iOS9网络Tip">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        
-        
-        
       
 
       
-    
+        
+          
+            <blockquote class="blockquote-center">因为在ios9中请求网络变成了HTTPS模式了，所以新建工程的时候，需要改Plist文件，每次都要百度一下太麻烦，所以在这里记录一下，方便。</blockquote>
+
+
+<pre><code><span class="tag">&lt;<span class="title">key</span>&gt;</span>NSAppTransportSecurity<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+<span class="tag">&lt;<span class="title">dict</span>&gt;</span>
+<span class="comment">&lt;!--Connect to anything (this is probably BAD)--&gt;</span>
+<span class="tag">&lt;<span class="title">key</span>&gt;</span>NSAllowsArbitraryLoads<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+<span class="tag">&lt;<span class="title">true</span>/&gt;</span>
+<span class="tag">&lt;/<span class="title">dict</span>&gt;</span>
+</code></pre><blockquote>
+<p>打开plist文件的时候，右键选择Open As -&gt; Source Code</p>
+</blockquote>
+<p><img src="http://ww2.sinaimg.cn/large/7a65bc01jw1f1ii7okoaqj20zg0llq7v.jpg =400x250" alt="图片"></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -1201,7 +1297,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1215,7 +1311,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
